@@ -37,7 +37,6 @@ if __name__ == '__main__':
         if run=='score':
             X.set_index('ID',inplace=True)
             X['aif_score'] =np.where(X['aif_score']=='False',np.NaN,X['aif_score'])
-            score_dataset(features_keep,CLF_PARAMS,X,'GMAB')
-            score_dataset(features_keep,CLF_PARAMS,X,'CMAB')
+            score_dataset(features_keep,CLF_PARAMS,X,['GMAB','CMAB'])
     else:
         raise ValueError('Please specify a run type: cv or score')

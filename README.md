@@ -2,8 +2,11 @@
 Code necessary to reproduce results in XXX Publication
 
 Requirements:
-- will add here
 
+python=3.8
+pip install scikit-learn
+pip install seaborn
+pip install openpyxl
 
 To generate the results, run the following commands:
 

@@ -150,10 +150,9 @@ def crossval(features_keep,CLF_PARAMS,X,CV,GNNPATH,ABLANGFILE):
     ax.yaxis.grid()
     plt.savefig('FigureS1B.pdf',bbox_inches='tight')
 
-def score_dataset(features_keep,CLF_PARAMS,X,ScoreDataset):
+def score_dataset(features_keep,CLF_PARAMS,X,datasetlist):
     scores_aa = {}
     ix_train = X[X['dataset']=='SKEMPI'].index
-    ix_test = X[X['dataset']==ScoreDataset].index
     ytrain = X.loc[ix_train,'y_clf'].values
 
     #####TREE######
@@ -162,23 +161,25 @@ def score_dataset(features_keep,CLF_PARAMS,X,ScoreDataset):
     xtrain_tree = imp.fit_transform(xtrain_tree)
     clf = make_pipeline(StandardScaler(),RandomForestClassifier(**CLF_PARAMS['rf_params']))
     clf.fit(xtrain_tree,ytrain)
-    #tree preds
-    ypred = clf.predict_proba(imp.transform(X.loc[ix_test,features_keep].values))[:,1]
-    ####TREE END####    
-                
-    mut_aas = X.loc[ix_test,'mutAA'].values
-    ix_consider = np.where(mut_aas!='A')[0]
-    aas_consider = mut_aas[ix_consider]
-    ypred_consider = ypred[ix_consider]
+
+    for ScoreDataset in datasetlist:
+          ix_test = X[X['dataset']==ScoreDataset].index
+          #tree preds
+          ypred = clf.predict_proba(imp.transform(X.loc[ix_test,features_keep].values))[:,1]
+          ####TREE END####    
+                         
+          mut_aas = X.loc[ix_test,'mutAA'].values
+          ix_consider = np.where(mut_aas!='A')[0]
+          aas_consider = mut_aas[ix_consider]
+          ypred_consider = ypred[ix_consider]
 
 
-    scores_aa[ScoreDataset] = {'TREE':ypred_consider,
-                            'AA':aas_consider}
+          scores_aa[ScoreDataset] = {'TREE':ypred_consider,
+                                   'AA':aas_consider}
 
-    scoredf = X[X['dataset']==ScoreDataset].copy()
-    scoredf['TREE']= scores_aa[ScoreDataset]['TREE']
-    scoredf['AA']= scores_aa[ScoreDataset]['AA']
-    scoredf.reset_index()[['ID','AA','TREE']].to_csv('scores_'+ScoreDataset+'.csv',index=False)
-    
-
-    
+          scoredf = X[X['dataset']==ScoreDataset].copy()
+          scoredf['TREE']= scores_aa[ScoreDataset]['TREE']
+          scoredf['AA']= scores_aa[ScoreDataset]['AA']
+          scoredf.reset_index()[['ID','AA','TREE']].to_csv('scores_'+ScoreDataset+'.csv',index=False)
+          
+          
