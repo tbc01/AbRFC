@@ -1,7 +1,7 @@
 # afficlass
-Code necessary to reproduce results in XXX Publication
+Code and data to reproduce results in "Machine Learning-Guided Intelligent Antibody Engineering for Rapid Response to SARS-COV-2"
 
-Requirements:
+## Requirements:
 
 python=3.8
 
@@ -11,7 +11,7 @@ pip install seaborn
 
 pip install openpyxl
 
-To generate the results, run the following commands:
+## To generate the results, run the following commands:
 
 - cross validation
 
