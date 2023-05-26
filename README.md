@@ -1,5 +1,5 @@
-# afficlass
-Code and data to reproduce results in "Machine Learning-Guided Intelligent Antibody Engineering for Rapid Response to SARS-COV-2"
+# AbRFC
+Code and data to reproduce the AbRFC model from "Machine Learning-Guided Intelligent Antibody Engineering for Rapid Response to SARS-COV-2"
 
 ## Requirements:
 
@@ -15,13 +15,13 @@ pip install openpyxl
 
 - cross validation
 
-cd afficlass
+cd AbRFC
 
 python3 run.py 'cv'
 
 - score
 
-cd afficlass
+cd AbRFC
 
 python3 run.py 'score'
 
