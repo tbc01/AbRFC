@@ -20,6 +20,8 @@ Code was tested on a 2022 Macbook Pro with an Apple M2 chip, 8GB Ram, running OS
 3. activate the conda environment `conda activate AbRFC`
 4. install dependencies `pip install -r requirements.txt` 
 
+Install time is negligible once conda is installed.
+
 ## To Replicate results from the paper:
 **All commands are run from the /path/to/AbRFC/ directory**
 ### Figure 2/S1
@@ -47,3 +49,5 @@ outputs: `outputs/Figure2E.pdf`
 
 outputs: `outputs/scores_CMAB.csv`, `outputs/scores_GMAB.csv`
 
+
+Running all code should take less than 3 minutes.
