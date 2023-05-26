@@ -11,6 +11,8 @@ pip install seaborn
 
 pip install openpyxl
 
+Code was tested on a 2022 Macbook Pro with an Apple M2 chip, 8GB Ram, running OS Ventura 13.13.1.  Python was run in a terminal using Rosetta 2 to allow the use of programs/libraries currently not adapted for Apple Silicon.
+
 ## To generate the results, run the following commands:
 
 - cross validation
