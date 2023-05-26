@@ -24,17 +24,26 @@ Code was tested on a 2022 Macbook Pro with an Apple M2 chip, 8GB Ram, running OS
 **All commands are run from the /path/to/AbRFC/ directory**
 ### Figure 2/S1
 - AA Bias in training/validation sets (Figure 2A, 2B)
+
 `python run.py aabias`
+
 outputs: `outpus/Figure2AB.pdf`
+
 - cross validation
+
 `python run.py cv`
+
 outputs: `outputs/FigureS1.pdf,outputs/Figure2C.pdf, outputs/Figure2D.pdf`
 
 - validation benchmarking
+
 `python run.py validation`
+
 outputs: `outputs/Figure2E.pdf`
 
-- score
+### Score mutations used for G and C campaigns
+
 `python run.py score`
+
 outputs: `outputs/scores_CMAB.csv`, `outputs/scores_GMAB.csv`
 
