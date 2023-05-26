@@ -1,5 +1,5 @@
 # AbRFC
-Code and data to reproduce the AbRFC model from "Machine Learning-Guided Intelligent Antibody Engineering for Rapid Response to SARS-COV-2"
+Code and data to reproduce the AbRFC model results and scores from "Machine Learning-Guided Antibody Engineering That Leverages Domain Knowledge To Overcome The Small Data Problem"
 
 ## Requirements:
 
