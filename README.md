@@ -24,30 +24,7 @@ Install time is negligible once conda is installed.
 
 ## To Replicate results from the paper:
 **All commands are run from the /path/to/AbRFC/ directory**
-### Figure 2/S1
-- AA Bias in training/validation sets (Figure 2A, 2B)
-
-`python run.py aabias`
-
-outputs: `outpus/Figure2AB.pdf`
-
-- cross validation
-
-`python run.py cv`
-
-outputs: `outputs/FigureS1.pdf,outputs/Figure2C.pdf, outputs/Figure2D.pdf`
-
-- validation benchmarking
-
-`python run.py validation`
-
-outputs: `outputs/Figure2E.pdf`
-
-### Score mutations used for G and C campaigns
-
-`python run.py score`
-
-outputs: `outputs/scores_CMAB.csv`, `outputs/scores_GMAB.csv`
-
-
-Running all code should take less than 3 minutes.
+- After setting up the environment and activating it, `python figures.py` will produce all the figures from the paper.
+- Note that AbRFC is retrained for the production of Figures S1/3,4, and 6
+- All files are saved to /path/to/AbRFC/outputs
+- This includes the scores for all mutations generated via in silico saturation mutagenesis for the CMAB and GMAB campaigns
