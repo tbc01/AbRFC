@@ -170,7 +170,7 @@ def run_cv():
 
 import re
 
-FILE_PATH = '/Users/tbc/Aquene/ID/Corona/GCPaperFinal/GCNC/AbRFC/code/'
+
 def numstr2tup(_n):
     match = re.match(r"([0-9]+)([a-z]+)", _n, re.I)
     if match:

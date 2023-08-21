@@ -12,6 +12,9 @@ pip install seaborn
 
 pip install openpyxl
 
+PyRosetta https://www.pyrosetta.org/downloads
+    - Build used: PyRosetta=2022.31+release
+
 Code was tested on a 2022 Macbook Pro with an Apple M2 chip, 8GB Ram, running OS Ventura 13.13.1.  Python was run in a terminal using Rosetta 2 to allow the use of programs/libraries currently not adapted for Apple Silicon.
 
 ## Installation instructions
@@ -19,6 +22,7 @@ Code was tested on a 2022 Macbook Pro with an Apple M2 chip, 8GB Ram, running OS
 2. clone this repository and change directories after cloning: `cd AbRFC`
 3. activate the conda environment `conda activate AbRFC`
 4. install dependencies `pip install -r requirements.txt` 
+5. install PyRosetta 
 
 Install time is negligible once conda is installed.
 
