@@ -426,8 +426,12 @@ def figure6(scores_cmab, scores_gmab):
         else:
             return 'C'
 
-    data_cmab   = pd.read_csv(FILE_PATH+'data/test/CMAB0/processed_elisa.csv') 
-    data_gmab   = pd.read_csv(FILE_PATH+'data/test/GMAB0/processed_elisa.csv')
+    data_cmab   = pd.read_excel(FILE_PATH+'data/test/CMAB0/CMAB_ELISA_OD.xlsx') 
+    data_cmab = data_cmab[~data_cmab['Processed OD (.06 ug/mL)'].isna()].copy().reset_index(drop=True)
+    data_cmab.rename(columns={'Processed OD (.06 ug/mL)':'OMRBD_OD'},inplace=True)
+
+    data_gmab   = pd.read_excel(FILE_PATH+'data/test/GMAB0/GMAB_ELISA_OD.xlsx')
+    data_gmab.rename(columns={'Processed OD (.3 ug/mL)':'OMRBD_OD'},inplace=True)
 
     selected_gmab = list(scores_gmab[scores_gmab.model_selected==1].label.values)+\
                     ['GMAB0','H54_NT'] #H54_NT is the deamination mutation
