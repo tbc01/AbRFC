@@ -1,5 +1,5 @@
 # AbRFC
-Code and data to reproduce the AbRFC model results and scores from "Enhancing antibody affinity through experimental sampling of non-deleterious CDR mutations predicted by machine learning" (https://doi.org/10.1038/s42004-023-01037-7)
+Code and data to reproduce the AbRFC model results and scores from [Enhancing antibody affinity through experimental sampling of non-deleterious CDR mutations predicted by machine learning](https://doi.org/10.1038/s42004-023-01037-7)
 
 ## Requirements:
 conda or miniconda https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
